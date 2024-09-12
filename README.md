@@ -1,4 +1,3 @@
-
 # Free Translate API (Python Version)
 
 Welcome to the Python version of the Free Translate API! This API allows you to perform translations between different languages without any limits. This project is inspired by the original version written in Go by [Ismal Zikri](https://github.com/ismalzikri/free-translate-api), but ported to Python using FastAPI and deep-translator. The API automatically detects the language of the provided text and translates it to the target language.
@@ -25,9 +24,10 @@ Welcome to the Python version of the Free Translate API! This API allows you to 
 To use this Python version of the Free Translate API, you'll need [Python](https://www.python.org/downloads/) installed on your system. After that, follow these steps to get started:
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-repo/free-translate-api-python.git
-   cd free-translate-api-python
+   git clone https://github.com/Hakciu/Unlimited-Google-Translate-API.git
+   cd Unlimited-Google-Translate-API
    ```
 
 2. Install dependencies using `requirements.txt`:
@@ -38,9 +38,11 @@ To use this Python version of the Free Translate API, you'll need [Python](https
 ### Usage
 
 Start the API server:
+
 ```bash
 uvicorn main:app --reload
 ```
+
 The API server will start running on `http://localhost:8000`.
 
 You can now send translation requests to the API using HTTP POST requests. The endpoint for translation is `/translate`. Here's an example using curl:
@@ -164,7 +166,7 @@ ZULU = "zu"
 
 ## API Endpoints
 
-### `POST /translate` 
+### `POST /translate`
 
 Translates the provided text to the specified target language. The request body should be a JSON object with the following structure:
 
@@ -188,16 +190,19 @@ The API automatically detects the language of the provided text and returns the 
 ## Example Requests
 
 ### Command Line (cURL)
+
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"text": "Hello", "to": "es"}' http://localhost:8000/translate
 ```
 
 ### PowerShell
+
 ```powershell
 Invoke-RestMethod -Method Post -Uri "http://localhost:8000/translate" -Headers @{"Content-Type"="application/json"} -Body '{"text": "Hello", "to": "es"}'
 ```
 
 ### Python Example
+
 ```python
 import requests
 
@@ -212,23 +217,24 @@ print(response.json())
 ```
 
 ### JavaScript Example (using async/await)
+
 ```javascript
 async function translateText() {
-    const response = await fetch("http://localhost:8000/translate", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            text: "Hello",
-            to: "es"
-        })
-    });
-    const data = await response.json();
-    console.log(data);
+  const response = await fetch('http://localhost:8000/translate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      text: 'Hello',
+      to: 'es',
+    }),
+  })
+  const data = await response.json()
+  console.log(data)
 }
 
-translateText();
+translateText()
 ```
 
 ## Contributing
